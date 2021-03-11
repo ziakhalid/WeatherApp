@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/weatherSummaryFragment">
+
+    <fragment
+        android:id="@+id/weatherSummaryFragment"
+        android:name="co.zia.khalid.weatherapp.weathersummary.WeatherSummaryFragment"
+        android:label="WeatherSummaryFragment" >
+        <action
+            android:id="@+id/action_weatherSummaryFragment_to_weatherDetailFragment"
+            app:destination="@id/weatherDetailFragment" />
+        <action
+            android:id="@+id/action_weatherSummaryFragment_to_searchLocationFragment"
+            app:destination="@id/searchLocationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherDetailFragment"
+        android:name="co.zia.khalid.weatherapp.weatherdetail.WeatherDetailFragment"
+        android:label="WeatherDetailFragment" >
+        <action
+            android:id="@+id/action_weatherDetailFragment_to_weatherSummaryFragment"
+            app:destination="@id/weatherSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchLocationFragment"
+        android:name="co.zia.khalid.weatherapp.searchlocation.SearchLocationFragment"
+        android:label="SearchLocationFragment" >
+        <action
+            android:id="@+id/action_searchLocationFragment_to_weatherSummaryFragment"
+            app:destination="@id/weatherSummaryFragment" />
+    </fragment>
+</navigation>
