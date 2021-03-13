@@ -15,10 +15,15 @@ interface WeatherInfoDao {
     @Query("SELECT * FROM WeatherInfo WHERE cityId = :cityId")
     fun getWeatherInfoByCityId(cityId: Int): WeatherInfo?
 
+    @Query("SELECT * FROM WeatherInfo WHERE cityName = :cityName")
+    fun getWeatherInfoByCityName(cityName: String): WeatherInfo?
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun saveWeatherInfo(weatherInfo: WeatherInfo)
 
-    @Query("DELETE FROM WeatherInfo ")
+    @Query("DELETE FROM WeatherInfo WHERE cityId = :cityId")
     fun deleteWeatherInfo(cityId: Int)
 
+    @Query("DELETE FROM WeatherInfo")
+    fun deleteAllInfo()
 }

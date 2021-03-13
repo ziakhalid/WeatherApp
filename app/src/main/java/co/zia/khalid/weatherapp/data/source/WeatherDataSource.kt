@@ -4,10 +4,10 @@ import co.zia.khalid.weatherapp.data.Result
 import co.zia.khalid.weatherapp.data.WeatherInfo
 
 interface WeatherDataSource {
-    fun getWeatherInfoByLatLong(latLong: String): Result<WeatherInfo>
-    fun getWeatherInfoByCityId(cityId: Int): Result<WeatherInfo>
-    fun getWeatherInfoByCityName(cityName: String): Result<WeatherInfo>
-    fun saveWeatherInfo(weatherInfo: WeatherInfo)
-    fun deleteWeatherInfo(cityId: Int)
-    fun deleteAllInfo()
+    suspend fun getWeatherInfoByLatLong(lat: String, lon: String): Result<WeatherInfo>
+    suspend fun getWeatherInfoByCityId(cityId: Int): Result<WeatherInfo>
+    suspend fun getWeatherInfoByCityName(cityName: String): Result<WeatherInfo>
+    suspend fun saveWeatherInfo(weatherInfo: WeatherInfo)
+    suspend fun deleteWeatherInfo(cityId: Int)
+    suspend fun deleteAllInfo()
 }
